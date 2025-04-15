@@ -3,110 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Firing Updates - Open Studio</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Open Studio - Firing Updates</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">Open Studio</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="rules.html">Studio Rules</a></li>
-                <li><a href="firing.html">Firing Updates</a></li>
-                <li><a href="members.html">Members</a></li>
-                <li><a href="https://forms.fillout.com/t/fufCQmPohsus" class="cta-button">Join Waitlist</a></li>
-            </ul>
-        </nav>
+        <!-- Navigation will be loaded here -->
     </header>
 
     <main>
         <section class="firing-hero">
-            <h1>Firing Schedule</h1>
+            <h1>Firing Updates</h1>
+            <p>Stay informed about our kiln firing schedule and updates</p>
         </section>
 
         <section class="firing-content">
-            <div class="firing-container">
+            <div class="firing-schedule">
+                <h2>Upcoming Firings</h2>
                 <div class="firing-dates">
-                    <div class="date-card">
-                        <h3>Last Firing</h3>
-                        <p class="date" id="lastFiring">March 15, 2024</p>
-                    </div>
-                    <div class="date-card">
+                    <div class="firing-date">
                         <h3>Next Firing</h3>
-                        <p class="date" id="nextFiring">April 1, 2024</p>
+                        <p>May 8th, 2025</p>
+                    </div>
+                    <div class="firing-date">
+                        <h3>Following Firing</h3>
+                        <p>May 22nd, 2025</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="countdown-container">
-                    <h2>Time Until Next Firing</h2>
-                    <div class="countdown" id="countdown">
-                        <div class="countdown-item">
-                            <span id="days">00</span>
-                            <span>Days</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span id="hours">00</span>
-                            <span>Hours</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span id="minutes">00</span>
-                            <span>Minutes</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span id="seconds">00</span>
-                            <span>Seconds</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="firing-guidelines">
+                <h2>Firing Guidelines</h2>
+                <ul>
+                    <li>All pieces must be completely dry before firing</li>
+                    <li>Maximum height: 12 inches</li>
+                    <li>Maximum width: 8 inches</li>
+                    <li>No pieces with enclosed air pockets</li>
+                    <li>All pieces must be properly labeled with your name</li>
+                    <li>Pieces must be placed in the designated firing area</li>
+                </ul>
+            </div>
+
+            <div class="firing-status">
+                <h2>Current Status</h2>
+                <p>All kilns are operational and running on schedule.</p>
+                <p>For any questions about the firing schedule, please contact us at PotteryChicago@gmail.com</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Contact Us</h4>
-                <p>Email: info@openstudio.com</p>
-            </div>
-            <div class="footer-section">
-                <h4>Follow Us</h4>
-                <div class="social-links">
-                    <a href="https://instagram.com/PotteryChicago"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Open Studio. All rights reserved.</p>
-        </div>
+        <!-- Footer will be loaded here -->
     </footer>
 
-    <script>
-        // Set the next firing date (YYYY-MM-DD)
-        const nextFiringDate = new Date('2024-04-01T00:00:00');
-
-        function updateCountdown() {
-            const now = new Date();
-            const diff = nextFiringDate - now;
-
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-        }
-
-        // Update countdown every second
-        setInterval(updateCountdown, 1000);
-        updateCountdown(); // Initial call
-    </script>
+    <script src="js/components.js"></script>
 </body>
 </html> 
