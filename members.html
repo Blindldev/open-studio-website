@@ -3,118 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Members Area - Open Studio</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Open Studio - Members</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">Open Studio</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="rules.html">Studio Rules</a></li>
-                <li><a href="firing.html">Firing Updates</a></li>
-                <li><a href="members.html">Members</a></li>
-                <li><a href="https://forms.fillout.com/t/fufCQmPohsus" class="cta-button">Join Waitlist</a></li>
-            </ul>
-        </nav>
+        <!-- Navigation will be loaded here -->
     </header>
 
     <main>
         <section class="members-hero">
-            <h1>Members Area</h1>
+            <div class="hero-content">
+                <h1>Member Portal</h1>
+                <p>Access your member resources and studio information</p>
+            </div>
         </section>
 
         <section class="members-content">
-            <div class="login-container" id="loginForm">
-                <h2>Member Login</h2>
-                <form id="loginForm">
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" required>
-                    </div>
-                    <button type="submit" class="cta-button">Login</button>
-                </form>
-            </div>
-
-            <div class="members-dashboard" id="membersDashboard" style="display: none;">
-                <div class="dashboard-section">
-                    <h2>Studio Calendar</h2>
-                    <div class="calendar-container">
-                        <iframe src="https://calendar.google.com/calendar/embed?src=abbe986703584e6e34bfafcf0bb5d269e60964517191be1c6e9bfba193fb53a3%40group.calendar.google.com&ctz=America%2FChicago" 
-                                style="border: 0" 
-                                width="100%" 
-                                height="600" 
-                                frameborder="0" 
-                                scrolling="no">
-                        </iframe>
-                    </div>
-                </div>
-
-                <div class="dashboard-section">
-                    <h2>Quick Links</h2>
-                    <div class="quick-links">
-                        <a href="rules.html" class="quick-link">
-                            <i class="fas fa-book"></i>
-                            <span>Studio Rules</span>
-                        </a>
-                        <a href="firing.html" class="quick-link">
-                            <i class="fas fa-fire"></i>
-                            <span>Firing Schedule</span>
-                        </a>
-                        <a href="#" class="quick-link">
-                            <i class="fas fa-file-invoice"></i>
-                            <span>Billing</span>
-                        </a>
-                        <a href="#" class="quick-link">
-                            <i class="fas fa-cog"></i>
-                            <span>Account Settings</span>
-                        </a>
-                    </div>
-                </div>
+            <div class="members-container">
+                <!-- Member content will go here -->
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Contact Us</h4>
-                <p>Email: info@openstudio.com</p>
-            </div>
-            <div class="footer-section">
-                <h4>Follow Us</h4>
-                <div class="social-links">
-                    <a href="https://instagram.com/PotteryChicago"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Open Studio. All rights reserved.</p>
-        </div>
+        <!-- Footer will be loaded here -->
     </footer>
 
-    <script>
-        // Simple login simulation (replace with actual authentication)
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            
-            // This is just a simulation - replace with actual authentication
-            if (email && password) {
-                document.getElementById('loginForm').style.display = 'none';
-                document.getElementById('membersDashboard').style.display = 'block';
-            }
-        });
-    </script>
+    <script src="js/nav.js"></script>
+    <script src="js/footer.js"></script>
 </body>
 </html> 
