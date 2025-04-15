@@ -6,6 +6,7 @@
     <title>Open Studio - Members</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
     <header>
@@ -19,40 +20,51 @@
         </section>
 
         <section class="members-content">
-            <div class="members-section">
-                <h2>Studio Access</h2>
-                <p>Your keycard provides 24/7 access to the studio. Please ensure you have your keycard with you at all times.</p>
-                <div class="access-info">
-                    <h3>Keycard Status: <span class="status-active">Active</span></h3>
-                    <p>Last Access: Today at 2:30 PM</p>
+            <div class="login-container" id="loginContainer">
+                <h2>Member Login</h2>
+                <div id="g_id_onload"
+                    data-client_id="YOUR_GOOGLE_CLIENT_ID"
+                    data-callback="handleCredentialResponse">
                 </div>
+                <div class="g_id_signin" data-type="standard"></div>
             </div>
 
-            <div class="members-section">
-                <h2>Clay Allocation</h2>
-                <div class="clay-info">
-                    <h3>Monthly Allowance: 25 lbs</h3>
-                    <p>Remaining this month: 15 lbs</p>
-                    <p>Next allocation: May 1st, 2025</p>
+            <div class="members-dashboard" id="membersDashboard" style="display: none;">
+                <div class="members-section">
+                    <h2>Studio Access</h2>
+                    <p>Your keycard provides 24/7 access to the studio. Please ensure you have your keycard with you at all times.</p>
+                    <div class="access-info">
+                        <h3>Keycard Status: <span class="status-active">Active</span></h3>
+                        <p>Last Access: Today at 2:30 PM</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="members-section">
-                <h2>Storage Information</h2>
-                <div class="storage-info">
-                    <h3>Locker Assignment: #12</h3>
-                    <p>Size: 3' x 1.5'</p>
-                    <p>Location: Back wall, middle section</p>
+                <div class="members-section">
+                    <h2>Clay Allocation</h2>
+                    <div class="clay-info">
+                        <h3>Monthly Allowance: 25 lbs</h3>
+                        <p>Remaining this month: 15 lbs</p>
+                        <p>Next allocation: May 1st, 2025</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="members-section">
-                <h2>Quick Links</h2>
-                <ul class="quick-links">
-                    <li><a href="firing.html">Firing Schedule</a></li>
-                    <li><a href="rules.html">Studio Rules</a></li>
-                    <li><a href="mailto:PotteryChicago@gmail.com">Contact Studio</a></li>
-                </ul>
+                <div class="members-section">
+                    <h2>Storage Information</h2>
+                    <div class="storage-info">
+                        <h3>Locker Assignment: #12</h3>
+                        <p>Size: 3' x 1.5'</p>
+                        <p>Location: Back wall, middle section</p>
+                    </div>
+                </div>
+
+                <div class="members-section">
+                    <h2>Quick Links</h2>
+                    <ul class="quick-links">
+                        <li><a href="firing.html">Firing Schedule</a></li>
+                        <li><a href="rules.html">Studio Rules</a></li>
+                        <li><a href="mailto:PotteryChicago@gmail.com">Contact Studio</a></li>
+                    </ul>
+                </div>
             </div>
         </section>
     </main>
@@ -62,5 +74,17 @@
     </footer>
 
     <script src="js/nav.js"></script>
+    <script>
+        function handleCredentialResponse(response) {
+            // Handle the Google OAuth response
+            console.log("ID: " + response.credential);
+            // Here you would typically verify the token with your backend
+            // and then show the dashboard if successful
+            
+            // For demo purposes, we'll just show the dashboard
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('membersDashboard').style.display = 'block';
+        }
+    </script>
 </body>
 </html> 

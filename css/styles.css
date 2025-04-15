@@ -148,24 +148,26 @@ nav {
     text-align: center;
 }
 
-.program-details {
+.about-content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 4rem 5%;
 }
 
-.program-overview, .equipment-list, .join-info {
+.about-section {
     margin-bottom: 3rem;
 }
 
-.pricing {
-    background-color: var(--light-bg);
-    padding: 2rem;
-    border-radius: 8px;
-    margin: 2rem 0;
+.about-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
-.inclusions ul, .equipment-list ul {
+.about-section p {
+    margin-bottom: 1rem;
+}
+
+.about-section ul {
     list-style-position: inside;
     margin: 1rem 0;
 }
@@ -222,21 +224,6 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    
-    .hero h1 {
-        font-size: 2rem;
-    }
-    
-    .features {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* FAQ Page Styles */
 .faq-hero {
     padding: 8rem 5% 4rem;
@@ -244,22 +231,26 @@ footer {
     text-align: center;
 }
 
-.faq-container {
+.faq-content {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
 }
 
+.faq-section {
+    margin-bottom: 3rem;
+}
+
 .faq-item {
-    background: var(--white);
-    padding: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: var(--white);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .faq-item h3 {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
@@ -270,36 +261,35 @@ footer {
     text-align: center;
 }
 
-.rules-container {
-    max-width: 1200px;
+.rules-content {
+    max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
 }
 
 .rules-section {
-    background: var(--white);
+    margin-bottom: 3rem;
     padding: 2rem;
+    background-color: var(--white);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .rules-section h2 {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
 .rules-section ul {
-    list-style-type: none;
-    padding-left: 1rem;
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0;
 }
 
 .rules-section ul li {
     margin-bottom: 0.5rem;
-    position: relative;
     padding-left: 1.5rem;
+    position: relative;
 }
 
 .rules-section ul li:before {
@@ -316,61 +306,47 @@ footer {
     text-align: center;
 }
 
-.firing-container {
-    max-width: 1200px;
+.firing-content {
+    max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
 }
 
+.firing-schedule {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
 .firing-dates {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.date-card {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.date-card h3 {
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-}
-
-.date-card .date {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.countdown-container {
-    text-align: center;
-    margin-top: 3rem;
-}
-
-.countdown {
-    display: flex;
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
-.countdown-item {
-    background: var(--white);
-    padding: 1rem 2rem;
+.firing-date {
+    padding: 1rem;
+    background-color: var(--light-bg);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
-.countdown-item span:first-child {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--secondary-color);
-    display: block;
+.firing-guidelines {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.firing-status {
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* Members Page Styles */
@@ -380,121 +356,104 @@ footer {
     text-align: center;
 }
 
-.login-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 2rem;
-    background: var(--white);
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--text-color);
-}
-
-.form-group input {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid var(--light-brown);
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-.members-dashboard {
-    max-width: 1200px;
+.members-content {
+    max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
 }
 
-.dashboard-section {
-    background: var(--white);
+.members-section {
+    margin-bottom: 3rem;
     padding: 2rem;
+    background-color: var(--white);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.access-info, .clay-info, .storage-info {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--light-bg);
+    border-radius: 8px;
+}
+
+.status-active {
+    color: #27ae60;
 }
 
 .quick-links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    list-style: none;
 }
 
-.quick-link {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    background: var(--light-bg);
-    border-radius: 8px;
-    text-decoration: none;
-    color: var(--text-color);
-    transition: transform 0.3s ease;
+.quick-links li {
+    margin-bottom: 0.5rem;
 }
 
-.quick-link:hover {
-    transform: translateY(-2px);
-}
-
-.quick-link i {
-    margin-right: 1rem;
+.quick-links a {
     color: var(--secondary-color);
-    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.calendar-container {
-    margin-top: 2rem;
-    border-radius: 8px;
-    overflow: hidden;
+.quick-links a:hover {
+    color: var(--primary-color);
 }
 
-/* Responsive Design Updates */
-@media (max-width: 768px) {
-    .countdown {
-        flex-wrap: wrap;
-    }
-    
-    .countdown-item {
-        width: calc(50% - 1rem);
-    }
-    
-    .quick-links {
-        grid-template-columns: 1fr;
-    }
-}
-
+/* Gallery Styles */
 .gallery {
-    padding: 4rem 2rem;
-    background: #f9f9f9;
+    padding: 4rem 5%;
+    background-color: var(--light-bg);
 }
 
 .gallery h2 {
     text-align: center;
     margin-bottom: 2rem;
+    color: var(--primary-color);
 }
 
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 2rem;
 }
 
-.gallery-grid img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+.gallery-item {
+    overflow: hidden;
     border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.gallery-grid img:hover {
+.gallery-item:hover img {
     transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .features {
+        grid-template-columns: 1fr;
+    }
+    
+    .firing-dates {
+        grid-template-columns: 1fr;
+    }
+}
+
+.equipment-list p {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
 } 
