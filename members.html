@@ -6,7 +6,6 @@
     <title>Open Studio - Members</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
     <header>
@@ -15,59 +14,45 @@
 
     <main>
         <section class="members-hero">
-            <div class="hero-content">
-                <h1>Member Portal</h1>
-                <p>Access your member resources and studio information</p>
-            </div>
+            <h1>Member Portal</h1>
+            <p>Access your studio resources and information</p>
         </section>
 
         <section class="members-content">
-            <div class="login-container" id="loginForm">
-                <h2>Member Login</h2>
-                <div id="g_id_onload"
-                    data-client_id="YOUR_GOOGLE_CLIENT_ID"
-                    data-context="signin"
-                    data-callback="handleCredentialResponse"
-                    data-auto_prompt="false">
+            <div class="members-section">
+                <h2>Studio Access</h2>
+                <p>Your keycard provides 24/7 access to the studio. Please ensure you have your keycard with you at all times.</p>
+                <div class="access-info">
+                    <h3>Keycard Status: <span class="status-active">Active</span></h3>
+                    <p>Last Access: Today at 2:30 PM</p>
                 </div>
-                <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
             </div>
 
-            <div class="members-dashboard" id="membersDashboard" style="display: none;">
-                <div class="dashboard-section">
-                    <h2>Studio Calendar</h2>
-                    <div class="calendar-container">
-                        <iframe src="https://calendar.google.com/calendar/embed?src=abbe986703584e6e34bfafcf0bb5d269e60964517191be1c6e9bfba193fb53a3%40group.calendar.google.com&ctz=America%2FChicago" 
-                                style="border: 0" 
-                                width="100%" 
-                                height="600" 
-                                frameborder="0" 
-                                scrolling="no">
-                        </iframe>
-                    </div>
+            <div class="members-section">
+                <h2>Clay Allocation</h2>
+                <div class="clay-info">
+                    <h3>Monthly Allowance: 25 lbs</h3>
+                    <p>Remaining this month: 15 lbs</p>
+                    <p>Next allocation: May 1st, 2025</p>
                 </div>
+            </div>
 
-                <div class="dashboard-section">
-                    <h2>Quick Links</h2>
-                    <div class="quick-links">
-                        <a href="/open-studio-website/rules.html" class="quick-link">
-                            <i class="fas fa-book"></i>
-                            <span>Studio Rules</span>
-                        </a>
-                        <a href="/open-studio-website/firing.html" class="quick-link">
-                            <i class="fas fa-fire"></i>
-                            <span>Firing Schedule</span>
-                        </a>
-                        <a href="#" class="quick-link">
-                            <i class="fas fa-file-invoice"></i>
-                            <span>Billing</span>
-                        </a>
-                        <a href="#" class="quick-link">
-                            <i class="fas fa-cog"></i>
-                            <span>Account Settings</span>
-                        </a>
-                    </div>
+            <div class="members-section">
+                <h2>Storage Information</h2>
+                <div class="storage-info">
+                    <h3>Locker Assignment: #12</h3>
+                    <p>Size: 3' x 1.5'</p>
+                    <p>Location: Back wall, middle section</p>
                 </div>
+            </div>
+
+            <div class="members-section">
+                <h2>Quick Links</h2>
+                <ul class="quick-links">
+                    <li><a href="firing.html">Firing Schedule</a></li>
+                    <li><a href="rules.html">Studio Rules</a></li>
+                    <li><a href="mailto:PotteryChicago@gmail.com">Contact Studio</a></li>
+                </ul>
             </div>
         </section>
     </main>
@@ -76,32 +61,6 @@
         <!-- Footer will be loaded here -->
     </footer>
 
-    <script>
-        function handleCredentialResponse(response) {
-            // Handle the Google Sign-In response
-            const credential = response.credential;
-            console.log("ID: " + credential);
-            
-            // Here you would typically send the credential to your backend for verification
-            // For now, we'll just show the dashboard
-            showDashboard();
-        }
-
-        function showDashboard() {
-            document.getElementById('loginForm').style.display = 'none';
-            document.getElementById('membersDashboard').style.display = 'block';
-            
-            // Store the login state in localStorage
-            localStorage.setItem('isLoggedIn', 'true');
-        }
-
-        // Check if user is already logged in
-        document.addEventListener('DOMContentLoaded', function() {
-            if (localStorage.getItem('isLoggedIn') === 'true') {
-                showDashboard();
-            }
-        });
-    </script>
     <script src="js/nav.js"></script>
 </body>
 </html> 
