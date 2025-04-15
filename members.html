@@ -6,6 +6,7 @@
     <title>Open Studio - Members</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
     <header>
@@ -21,8 +22,51 @@
         </section>
 
         <section class="members-content">
-            <div class="members-container">
-                <!-- Member content will go here -->
+            <div class="login-container" id="loginForm">
+                <h2>Member Login</h2>
+                <div id="g_id_onload"
+                    data-client_id="YOUR_GOOGLE_CLIENT_ID"
+                    data-context="signin"
+                    data-callback="handleCredentialResponse">
+                </div>
+                <div class="g_id_signin" data-type="standard"></div>
+            </div>
+
+            <div class="members-dashboard" id="membersDashboard" style="display: none;">
+                <div class="dashboard-section">
+                    <h2>Studio Calendar</h2>
+                    <div class="calendar-container">
+                        <iframe src="https://calendar.google.com/calendar/embed?src=abbe986703584e6e34bfafcf0bb5d269e60964517191be1c6e9bfba193fb53a3%40group.calendar.google.com&ctz=America%2FChicago" 
+                                style="border: 0" 
+                                width="100%" 
+                                height="600" 
+                                frameborder="0" 
+                                scrolling="no">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <h2>Quick Links</h2>
+                    <div class="quick-links">
+                        <a href="/open-studio-website/rules.html" class="quick-link">
+                            <i class="fas fa-book"></i>
+                            <span>Studio Rules</span>
+                        </a>
+                        <a href="/open-studio-website/firing.html" class="quick-link">
+                            <i class="fas fa-fire"></i>
+                            <span>Firing Schedule</span>
+                        </a>
+                        <a href="#" class="quick-link">
+                            <i class="fas fa-file-invoice"></i>
+                            <span>Billing</span>
+                        </a>
+                        <a href="#" class="quick-link">
+                            <i class="fas fa-cog"></i>
+                            <span>Account Settings</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -31,7 +75,16 @@
         <!-- Footer will be loaded here -->
     </footer>
 
-    <script src="js/nav.js"></script>
-    <script src="js/footer.js"></script>
+    <script>
+        function handleCredentialResponse(response) {
+            // Handle the Google Sign-In response
+            console.log("ID: " + response.credential);
+            // Here you would typically send the credential to your backend for verification
+            // and then show the dashboard if successful
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('membersDashboard').style.display = 'block';
+        }
+    </script>
+    <script src="js/components.js"></script>
 </body>
 </html> 
