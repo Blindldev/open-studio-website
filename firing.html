@@ -20,48 +20,59 @@
 
         <section class="firing-content">
             <div class="firing-schedule">
-                <h2>Upcoming Firings</h2>
+                <h2>Firing Schedule</h2>
                 <div class="firing-dates">
-                    <div class="firing-date">
+                    <div class="firing-date recent">
+                        <h3>Most Recent Firing</h3>
+                        <p class="date">April 14, 2024</p>
+                        <p class="status completed">Completed</p>
+                        <p class="temperature">Cone 10</p>
+                        <p class="details">Glaze firing - Standard reduction</p>
+                    </div>
+                    
+                    <div class="firing-date next">
                         <h3>Next Firing</h3>
-                        <p>May 8th, 2025</p>
+                        <p class="date">April 21, 2024</p>
+                        <p class="status upcoming">Loading Day</p>
+                        <p class="temperature">Cone 10</p>
+                        <p class="details">Glaze firing - Standard reduction</p>
                     </div>
-                    <div class="firing-date">
+                    <div class="firing-date future">
                         <h3>Following Firing</h3>
-                        <p>May 22nd, 2025</p>
+                        <p class="date">April 28, 2024</p>
+                        <p class="status scheduled">Scheduled</p>
+                        <p class="temperature">Cone 6</p>
+                        <p class="details">Bisque firing</p>
                     </div>
-                </div>
-                <div class="countdown-container">
-                    <h3>Time until next firing:</h3>
-                    <div class="countdown">
-                        <div class="countdown-item">
-                            <span id="days">00</span>
-                            <span>Days</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span id="hours">00</span>
-                            <span>Hours</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span id="minutes">00</span>
-                            <span>Minutes</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span id="seconds">00</span>
-                            <span>Seconds</span>
-                        </div>
+                
+            </div>
+        </div>
+            <div class="countdown-container">
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span id="days">05</span>
+                        <span>Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours">12</span>
+                        <span>Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes">30</span>
+                        <span>Minutes</span>
                     </div>
                 </div>
             </div>
+
 
             <div class="firing-guidelines">
                 <h2>Firing Guidelines</h2>
                 <ul>
                     <li>All pieces must be completely dry before firing</li>
                     <li>Maximum height: 12 inches</li>
-                    <li>Maximum width: 8 inches</li>
+                    <li>Maximum width: 12 inches</li>
                     <li>No pieces with enclosed air pockets</li>
-                    <li>All pieces must be properly labeled with your name</li>
+                    <li>All pieces must be properly labeled with your name and the date created</li>
                     <li>Pieces must be placed in the designated firing area</li>
                 </ul>
             </div>
@@ -80,8 +91,20 @@
 
     <script src="js/nav.js"></script>
     <script>
+        // Get the date from the "Next Firing" event
+        function getNextFiringDate() {
+            const firingDates = document.querySelectorAll('.firing-date');
+            for (let date of firingDates) {
+                if (date.querySelector('h3').textContent === 'Next Firing') {
+                    return date.querySelector('p').textContent;
+                }
+            }
+            return null;
+        }
+
         // Set the date we're counting down to
-        const countDownDate = new Date("May 8, 2025 00:00:00").getTime();
+        const nextFiringDate = getNextFiringDate();
+        const countDownDate = new Date(nextFiringDate).getTime();
 
         // Update the countdown every 1 second
         const x = setInterval(function() {

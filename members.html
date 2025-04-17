@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Open Studio - Members</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
@@ -14,57 +14,57 @@
     </header>
 
     <main>
-        <section class="members-hero">
-            <h1>Member Portal</h1>
-            <p>Access your studio resources and information</p>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Member Portal</h1>
+                <p>Access your studio resources and information</p>
+            </div>
         </section>
 
         <section class="members-content">
-            <div class="login-container" id="loginContainer">
+            <div class="login-container" id="login-container">
                 <h2>Member Login</h2>
+                <p>Please sign in with your Google account to access member features.</p>
                 <div id="g_id_onload"
                     data-client_id="211755762666-rh0kraf1ola65g5r5dud53o9qap9acpg.apps.googleusercontent.com"
-                    data-callback="handleCredentialResponse">
+                    data-callback="handleCredentialResponse"
+                    data-auto_prompt="false">
                 </div>
                 <div class="g_id_signin" data-type="standard"></div>
+                <div id="error-message" class="error-message"></div>
             </div>
 
-            <div class="members-dashboard" id="membersDashboard" style="display: none;">
-                <div class="members-section">
-                    <h2>Studio Access</h2>
-                    <p>Your keycard provides 24/7 access to the studio. Please ensure you have your keycard with you at all times.</p>
-                    <div class="access-info">
-                        <h3>Keycard Status: <span class="status-active">Active</span></h3>
-                        <p>Last Access: Today at 2:30 PM</p>
+            <div class="member-dashboard" id="member-dashboard" style="display: none;">
+                <h2>Welcome, <span id="member-name"></span>!</h2>
+                <div class="dashboard-content">
+                    <div class="dashboard-section">
+                        <h3>Studio Access</h3>
+                        <p>Your studio access is active. You can access the studio during regular hours.</p>
+                        <p>Current Status: <span class="status active">Active</span></p>
+                    </div>
+                    
+                    <div class="dashboard-section">
+                        <h3>Clay Allocation</h3>
+                        <p>Your current clay allocation: 25 lbs</p>
+                        <p>Next allocation date: May 1, 2024</p>
+                    </div>
+                    
+                    <div class="dashboard-section">
+                        <h3>Storage Information</h3>
+                        <p>Your storage space is located in Shelf B, Section 3</p>
+                        <p>Last cleaned: April 1, 2024</p>
+                    </div>
+                    
+                    <div class="dashboard-section">
+                        <h3>Quick Links</h3>
+                        <ul class="quick-links">
+                            <li><a href="firing.html">Firing Schedule</a></li>
+                            <li><a href="rules.html">Studio Rules</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                        </ul>
                     </div>
                 </div>
-
-                <div class="members-section">
-                    <h2>Clay Allocation</h2>
-                    <div class="clay-info">
-                        <h3>Monthly Allowance: 25 lbs</h3>
-                        <p>Remaining this month: 15 lbs</p>
-                        <p>Next allocation: May 1st, 2025</p>
-                    </div>
-                </div>
-
-                <div class="members-section">
-                    <h2>Storage Information</h2>
-                    <div class="storage-info">
-                        <h3>Locker Assignment: #12</h3>
-                        <p>Size: 3' x 1.5'</p>
-                        <p>Location: Back wall, middle section</p>
-                    </div>
-                </div>
-
-                <div class="members-section">
-                    <h2>Quick Links</h2>
-                    <ul class="quick-links">
-                        <li><a href="firing.html">Firing Schedule</a></li>
-                        <li><a href="rules.html">Studio Rules</a></li>
-                        <li><a href="mailto:PotteryChicago@gmail.com">Contact Studio</a></li>
-                    </ul>
-                </div>
+                <button id="sign-out" class="sign-out-button">Sign Out</button>
             </div>
         </section>
     </main>
@@ -75,16 +75,50 @@
 
     <script src="js/nav.js"></script>
     <script>
-        function handleCredentialResponse(response) {
-            // Handle the Google OAuth response
-            console.log("ID: " + response.credential);
-            // Here you would typically verify the token with your backend
-            // and then show the dashboard if successful
-            
-            // For demo purposes, we'll just show the dashboard
-            document.getElementById('loginContainer').style.display = 'none';
-            document.getElementById('membersDashboard').style.display = 'block';
+        // Function to check if an email is in the active members list
+        async function isActiveMember(email) {
+            try {
+                const response = await fetch('data/active_members.csv');
+                const csvText = await response.text();
+                const emails = csvText.split('\n').map(line => line.trim().toLowerCase());
+                return emails.includes(email.toLowerCase());
+            } catch (error) {
+                console.error('Error checking active members:', error);
+                return false;
+            }
         }
+
+        // Handle Google Sign-In response
+        async function handleCredentialResponse(response) {
+            const credential = response.credential;
+            const payload = JSON.parse(atob(credential.split('.')[1]));
+            const email = payload.email;
+            const name = payload.name;
+
+            // Check if the email is in the active members list
+            const isActive = await isActiveMember(email);
+            
+            if (isActive) {
+                // Show member dashboard
+                document.getElementById('login-container').style.display = 'none';
+                document.getElementById('member-dashboard').style.display = 'block';
+                document.getElementById('member-name').textContent = name;
+            } else {
+                // Show error message
+                document.getElementById('error-message').textContent = 
+                    'This email is not registered as an active member. Please contact the studio administrator.';
+                // Sign out the user
+                google.accounts.id.disableAutoSelect();
+            }
+        }
+
+        // Handle sign out
+        document.getElementById('sign-out').addEventListener('click', () => {
+            google.accounts.id.disableAutoSelect();
+            document.getElementById('login-container').style.display = 'block';
+            document.getElementById('member-dashboard').style.display = 'none';
+            document.getElementById('error-message').textContent = '';
+        });
     </script>
 </body>
 </html> 
