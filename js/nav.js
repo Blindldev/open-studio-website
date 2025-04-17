@@ -16,7 +16,7 @@ fetch('components/nav.html')
             'rules.html': 'G3',
             'faq.html': 'G4',
             'about.html': 'G5',
-            'index.html': 'G7'
+            'index.html': 'G8'
         };
         
         // Get current page filename
