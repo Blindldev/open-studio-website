@@ -14,11 +14,9 @@
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Member Portal</h1>
-                <p>Access your studio resources and information</p>
-            </div>
+        <section class="firing-hero">
+            <h1>Member Portal</h1>
+            <p>Access your studio resources and information</p>
         </section>
 
         <section class="members-content">
@@ -41,18 +39,20 @@
                         <h3>Studio Access</h3>
                         <p>Your studio access is active. You can access the studio during regular hours.</p>
                         <p>Current Status: <span class="status active">Active</span></p>
+                        <p>Membership Date: <span id="membership-date"></span></p>
                     </div>
                     
                     <div class="dashboard-section">
                         <h3>Clay Allocation</h3>
-                        <p>Your current clay allocation: 25 lbs</p>
-                        <p>Next allocation date: May 1, 2024</p>
+                        <p>Your current clay allocation: <span id="clay-allocation"></span> lbs</p>
+                        <p>Next allocation date: <span id="next-allocation"></span></p>
                     </div>
                     
                     <div class="dashboard-section">
                         <h3>Storage Information</h3>
-                        <p>Your storage space is located in Shelf B, Section 3</p>
-                        <p>Last cleaned: April 1, 2024</p>
+                        <p>Locker Number: <span id="locker-number"></span></p>
+                        <p>Shelf Number: <span id="shelf-number"></span></p>
+                        <p>Last cleaned: <span id="last-cleaned"></span></p>
                     </div>
                     
                     <div class="dashboard-section">
@@ -80,8 +80,17 @@
             try {
                 const response = await fetch('data/active_members.csv');
                 const csvText = await response.text();
-                const emails = csvText.split('\n').map(line => line.trim().toLowerCase());
-                return emails.includes(email.toLowerCase());
+                const lines = csvText.split('\n');
+                const headers = lines[0].split(',');
+                const members = lines.slice(1).map(line => {
+                    const values = line.split(',');
+                    return headers.reduce((obj, header, index) => {
+                        obj[header] = values[index];
+                        return obj;
+                    }, {});
+                });
+                const member = members.find(m => m.email.toLowerCase() === email.toLowerCase());
+                return member || false;
             } catch (error) {
                 console.error('Error checking active members:', error);
                 return false;
@@ -96,13 +105,27 @@
             const name = payload.name;
 
             // Check if the email is in the active members list
-            const isActive = await isActiveMember(email);
+            const member = await isActiveMember(email);
             
-            if (isActive) {
+            if (member) {
                 // Show member dashboard
                 document.getElementById('login-container').style.display = 'none';
                 document.getElementById('member-dashboard').style.display = 'block';
-                document.getElementById('member-name').textContent = name;
+                document.getElementById('member-name').textContent = member.name;
+                document.getElementById('clay-allocation').textContent = member.clay_allocation;
+                document.getElementById('membership-date').textContent = member.membership_date;
+                document.getElementById('locker-number').textContent = member.locker_number;
+                document.getElementById('shelf-number').textContent = member.shelf_number;
+                
+                // Calculate next allocation date (30 days from now)
+                const nextAllocation = new Date();
+                nextAllocation.setDate(nextAllocation.getDate() + 30);
+                document.getElementById('next-allocation').textContent = nextAllocation.toLocaleDateString();
+                
+                // Set last cleaned date (7 days ago)
+                const lastCleaned = new Date();
+                lastCleaned.setDate(lastCleaned.getDate() - 7);
+                document.getElementById('last-cleaned').textContent = lastCleaned.toLocaleDateString();
             } else {
                 // Show error message
                 document.getElementById('error-message').textContent = 
