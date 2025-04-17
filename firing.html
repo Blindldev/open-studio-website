@@ -24,7 +24,7 @@
                 <div class="firing-dates">
                     <div class="firing-date recent">
                         <h3>Most Recent Firing</h3>
-                        <p class="date">April 14, 2024</p>
+                        <p class="date">April 17, 2025</p>
                         <p class="status completed">Completed</p>
                         <p class="temperature">Cone 10</p>
                         <p class="details">Glaze firing - Standard reduction</p>
@@ -32,7 +32,7 @@
                     
                     <div class="firing-date next">
                         <h3>Next Firing</h3>
-                        <p class="date">April 21, 2024</p>
+                        <p class="date">May 1, 2025</p>
                         <p class="status upcoming">Loading Day</p>
                         <p class="temperature">Cone 10</p>
                         <p class="details">Glaze firing - Standard reduction</p>
@@ -93,48 +93,40 @@
     <script>
         // Get the date from the "Next Firing" event
         function getNextFiringDate() {
-            const firingDates = document.querySelectorAll('.firing-date');
-            for (let date of firingDates) {
-                if (date.querySelector('h3').textContent === 'Next Firing') {
-                    return date.querySelector('p').textContent;
-                }
+            const nextFiringElement = document.querySelector('.firing-date.next .date');
+            if (nextFiringElement) {
+                return new Date(nextFiringElement.textContent);
             }
             return null;
         }
 
-        // Set the date we're counting down to
-        const nextFiringDate = getNextFiringDate();
-        const countDownDate = new Date(nextFiringDate).getTime();
+        // Update the countdown
+        function updateCountdown() {
+            const nextFiringDate = getNextFiringDate();
+            if (!nextFiringDate) return;
 
-        // Update the countdown every 1 second
-        const x = setInterval(function() {
-            // Get current date and time
-            const now = new Date().getTime();
-            
-            // Find the distance between now and the countdown date
-            const distance = countDownDate - now;
-            
-            // Time calculations for days, hours, minutes and seconds
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            // Display the result
-            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
-            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
-            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
-            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
-            
-            // If the countdown is finished, display some text
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("days").innerHTML = "00";
-                document.getElementById("hours").innerHTML = "00";
-                document.getElementById("minutes").innerHTML = "00";
-                document.getElementById("seconds").innerHTML = "00";
+            const now = new Date();
+            const timeLeft = nextFiringDate - now;
+
+            if (timeLeft <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                return;
             }
-        }, 1000);
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+        }
+
+        // Update countdown every minute
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
     </script>
 </body>
 </html> 
