@@ -7,6 +7,7 @@
     --white: #ffffff;
     --dark-brown: #3a2d1c;
     --light-brown: #d4c4a7;
+    --light-gray: #f0f0f0;
 }
 
 * {
@@ -90,63 +91,26 @@ header {
 
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
         position: fixed;
         top: 0;
-        left: 0;
+        right: -100%;
         width: 100%;
         height: 100vh;
-        background-color: var(--primary-color);
+        background-color: var(--white);
         flex-direction: column;
-        align-items: center;
         justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.3s ease;
         z-index: 1000;
-        padding: 2rem;
-        transform: translateY(-100%);
-        transition: transform 0.3s ease-in-out;
     }
-
+    
     .nav-links.active {
-        display: flex;
-        transform: translateY(0);
+        right: 0;
     }
-
-    .nav-links li {
-        margin: 1rem 0;
-    }
-
+    
     .menu-toggle {
         display: block;
-        position: fixed;
-        top: 1rem;
-        right: 1rem;
-        z-index: 1001;
-        background: none;
-        border: none;
-        color: var(--text-color);
-        font-size: 1.5rem;
-        cursor: pointer;
-    }
-
-    /* Add padding to main content to prevent overlap */
-    main {
-        padding-top: 4rem;
-    }
-
-    /* Adjust hero section spacing */
-    .hero {
-        padding: 2rem 1rem;
-        margin-top: 0;
-    }
-
-    /* Ensure content sections have proper spacing */
-    .rules-content,
-    .firing-content,
-    .members-content,
-    .faq-content,
-    .about-content {
-        padding: 1rem;
-        margin-top: 1rem;
     }
 
     .navbar.menu-open {
@@ -1057,74 +1021,38 @@ footer {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Discount Codes Section */
-.discount-codes {
+.important-notes {
+    padding: 4rem 5%;
+    background-color: var(--light-bg);
+    margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
-.discount-note {
-    text-align: center;
-    color: var(--secondary-color);
-    font-style: italic;
-    margin-bottom: 1.5rem;
-    padding: 0.5rem;
-    background-color: var(--light-bg);
-    border-radius: 4px;
-}
-
-.discount-code {
-    background-color: var(--light-bg);
-    padding: 1.5rem;
+.note-box {
+    background-color: white;
+    padding: 2rem;
     border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
-.discount-code:hover {
+.note-box:hover {
     transform: translateY(-5px);
 }
 
-.discount-code h4 {
+.note-box h3 {
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.discount-code p {
+    margin-bottom: 1rem;
     font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--secondary-color);
-    margin: 1rem 0;
 }
 
-.discount-code .cta-button {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: var(--secondary-color);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.discount-code .cta-button:hover {
-    background-color: var(--accent-color);
-}
-
-/* Easter Message */
-.easter-message {
-    text-align: center;
-    padding: 2rem;
-    margin-top: 3rem;
-    background-color: var(--light-bg);
-    border-radius: 8px;
-}
-
-.easter-message p {
-    font-size: 1.2rem;
-    color: var(--primary-color);
+.note-box p {
     margin: 0;
+    line-height: 1.6;
+}
+
+.note-box:last-child {
+    margin-bottom: 0;
 } 
