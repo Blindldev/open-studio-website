@@ -95,6 +95,23 @@
 
     <script type="module" src="js/nav.js"></script>
     <script>
+        function initGoogleSignIn() {
+            gapi.load('auth2', function() {
+                gapi.auth2.init({
+                    client_id: 'YOUR_GOOGLE_CLIENT_ID',
+                    scope: 'email profile',
+                    redirect_uri: 'https://throw247.com/members.html'
+                }).then(function(auth2) {
+                    // Check if user is already signed in
+                    if (auth2.isSignedIn.get()) {
+                        const profile = auth2.currentUser.get().getBasicProfile();
+                        const email = profile.getEmail();
+                        checkMemberStatus(email);
+                    }
+                });
+            });
+        }
+
         // Function to check if an email is in the active members list
         async function isActiveMember(email) {
             try {
