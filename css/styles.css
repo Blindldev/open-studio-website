@@ -1136,4 +1136,41 @@ footer {
 
 .example-pieces img:hover {
     transform: scale(1.05);
+}
+
+.tour-slot {
+    text-align: center;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.tour-slot h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.tour-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tour-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 480px) {
+    .tour-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
 } 
