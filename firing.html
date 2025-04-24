@@ -108,18 +108,13 @@
     <script>
         // Get the date from the "Next Firing" event
         function getNextFiringDate() {
-            const nextFiringElement = document.querySelector('.firing-date.next .date');
-            if (nextFiringElement) {
-                return new Date(nextFiringElement.textContent);
-            }
-            return null;
+            // Hardcode the next firing date to May 1st, 2025
+            return new Date('2025-05-01T00:00:00');
         }
 
         // Update the countdown
         function updateCountdown() {
             const nextFiringDate = getNextFiringDate();
-            if (!nextFiringDate) return;
-
             const now = new Date();
             const timeLeft = nextFiringDate - now;
 
