@@ -1212,7 +1212,7 @@ footer {
 }
 
 .contact-section .cta-button {
-    margin: 1rem;
+    margin-top: 1.5rem;
     display: inline-block;
     padding: 1rem 2rem;
     background-color: var(--primary-color);
