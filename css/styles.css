@@ -286,18 +286,22 @@ header {
 
 /* Buttons */
 .cta-button {
+    margin: 0.5rem;
     display: inline-block;
     padding: 1rem 2rem;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: var(--white);
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 8px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button:hover {
-    background-color: #c0392b;
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer Styles */
@@ -1191,24 +1195,24 @@ footer {
 
 .contact-section {
     background-color: var(--light-bg);
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .contact-section h2 {
     color: var(--primary-color);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .contact-section p {
     max-width: 600px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 1rem;
     color: var(--text-color);
 }
 
 .contact-section .cta-button {
-    margin-top: 2rem;
+    margin: 1rem;
     display: inline-block;
     padding: 1rem 2rem;
     background-color: var(--primary-color);
