@@ -196,6 +196,9 @@ header {
     z-index: 1;
     max-width: 800px;
     padding: 2rem;
+    text-align: center;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero h1 {
@@ -207,6 +210,21 @@ header {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     max-width: 600px;
+}
+
+.banner-note {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    color: var(--primary-color);
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.banner-note p {
+    margin: 0;
+    color: var(--primary-color);
 }
 
 /* Features Section */
