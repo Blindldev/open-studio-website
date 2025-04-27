@@ -57,9 +57,9 @@
                 <div class="dashboard-content">
                     <div class="dashboard-section">
                         <h3>Studio Access</h3>
-                        <p>Your studio access is active. You can access the studio during regular hours.</p>
+                        <p>Your studio access is active. You can access the studio during regular hours using pin code: 12694</p>
                         <p>Current Status: <span class="status active">Active</span></p>
-                        <p>Membership Date: <span id="membership-date"></span></p>
+                        <p>Membership Date: <span id="membership-date">2025-04-01</span></p>
                     </div>
                     
                     <div class="dashboard-section">
@@ -154,9 +154,9 @@
                 document.getElementById('locker-number').textContent = member.locker_number;
                 document.getElementById('shelf-number').textContent = member.shelf_number;
                 
-                // Calculate next allocation date (30 days from now)
-                const nextAllocation = new Date();
-                nextAllocation.setDate(nextAllocation.getDate() + 30);
+                // Calculate next allocation date (first of next month)
+                const today = new Date();
+                const nextAllocation = new Date(today.getFullYear(), today.getMonth() + 1, 1);
                 document.getElementById('next-allocation').textContent = nextAllocation.toLocaleDateString();
                 
                 // Set last cleaned date (7 days ago)
