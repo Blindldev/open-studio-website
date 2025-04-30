@@ -1,15 +1,21 @@
 email,name,clay_allocation,membership_date,locker_number,shelf_number
-PotteryChicago@gmail.com,Admin,25,2025-04-01,B-12,3
-Mikevicentecs@gmail.com,Mike,25,2024-04-01,A-3,F3
-kali.lachner@gmail.com, Kali,25,2024-04-01,A-2,F1
-marinspies01@gmail.com, Maggie,25,2024-04-01,A-1,F6 
-lbellenprivate@gmail.com, Lauren,25,2024-04-28,A-4,F2
-jakehoury@gmail.com, Jacob,25,2024-04-28,A-5,F3
-milla.mccleskey@gmail.com, Milla,25,2024-04-28,A-6,F4
-rebeccahkleiman@gmail.com, Rebecca,25,2024-04-28,A-7,F5
-jdrutter2@gmail.com, James,25,2024-04-28,B-1, G5
-Marinasrutter@gmail.com, Marina,25,2024-04-28,B-4, G4
-dimplemehta20@gmail.com, Dimple,25,2024-04-28,B-2, G3
-ivalisguajardo@gmail.com, Ivalis,25,2024-04-28,B-3, E3
-hannahs2912@gmail.com, Hannah,25,2024-04-28,B-6, G2
-kmehta992@gmail.com, Khushbu,25,2024-04-28,B-5, E2
+PotteryChicago@gmail.com,Admin,25,2025-04-01,All,All
+Mikevicentecs@gmail.com,Mike,25,2024-04-01,A-1,All
+kali.lachner@gmail.com, Kali,25,2024-04-01,A-2,2A
+hannahs2912@gmail.com, Hannah,25,2024-04-28,A-3,1B
+lbellenprivate@gmail.com, Lauren,25,2024-04-28,A-6,2B
+marinspies01@gmail.com, Maggie,25,2024-04-01,A-8,2F
+megan.maurer18@gmail.com, Megan, 25,2024-04-25,A-7,3A
+Rachel@gmail.com, Rachel, 25,2024-04-29,B-9, 1C
+jakehoury@gmail.com, Jake,25,2024-04-28,B-2,1F
+milla.mccleskey@gmail.com, Milla,25,2024-04-28,A-5,3B
+dimplemehta20@gmail.com, Dimple,25,2024-04-28,B-7, 3D
+kmehta992@gmail.com, Khushbu,25,2024-04-28,B-8, 2D
+ivalisguajardo@gmail.com, Ivalis,25,2024-04-28,B-3, 3C
+rebeccahkleiman@gmail.com, Rebecca,25,2024-04-28,A-4,3E
+jdrutter2@gmail.com, James,25,2024-04-28,B-1, 1E
+Marinasrutter@gmail.com, Marina,25,2024-04-28,B-4, 1D
+Temp@gmail.com,Mike,25,2024-04-01,A-1,1A
+Temp2@gmail.com,Mike,25,2024-04-01,B-5,2C
+Temp3@gmail.com,Mike,25,2024-04-01,A-9,2E
+Temp3@gmail.com,Mike,25,2024-04-01,B-6,3F
