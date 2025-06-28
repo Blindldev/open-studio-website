@@ -1,21 +1,21 @@
-email,name,clay_allocation,membership_date,locker_number,shelf_number
-PotteryChicago@gmail.com,Admin,25,2025-04-01,All,All
-Mikevicentecs@gmail.com,Mike,25,2024-04-01,A-1,All
-kali.lachner@gmail.com, Kali,25,2024-04-01,A-2,2A
-hannahs2912@gmail.com, Hannah,25,2024-04-28,A-3,1B
-lbellenprivate@gmail.com, Lauren,25,2024-04-28,A-6,2B
-marinspies01@gmail.com, Maggie,25,2024-04-01,A-8,2F
-megan.maurer18@gmail.com, Megan, 25,2024-04-25,A-7,3A
-rachelmenhart01@gmail.com, Rachel, 25,2024-04-29,B-9, 1C
-jakehoury@gmail.com, Jake,25,2024-04-28,B-2,1F
-milla.mccleskey@gmail.com, Milla,25,2024-04-28,A-5,3B
-dimplemehta20@gmail.com, Dimple,25,2024-04-28,B-7, 3D
-kmehta992@gmail.com, Khushbu,25,2024-04-28,B-8, 2D
-ivalisguajardo@gmail.com, Ivalis,25,2024-04-28,B-3, 3C
-rebeccahkleiman@gmail.com, Rebecca,25,2024-04-28,A-4,3E
-jdrutter2@gmail.com, James,25,2024-04-28,B-1, 1E
-Marinasrutter@gmail.com, Marina,25,2024-04-28,B-4, 1D
-houang@asu.edu,Michael,25,2024-04-30,B-5,2C
-habieber1108@gmail.com,Holly,25,2024-05-01,B-6,3F
-Lcguerra714@gmail.com,Laura,25,2024-05-01,A-1,1A
-rallykate@gmail.com,Katie,25,2024-04-01,A-9,2E
+email,name,clay_allocation,membership_date,locker_number,shelf_number,next_billing_amount
+PotteryChicago@gmail.com,Admin,25,2025-04-01,All,All,140
+Mikevicentecs@gmail.com,Mike,25,2024-04-01,A-1,All,140
+kali.lachner@gmail.com, Kali,25,2024-04-01,A-2,2A,140
+hannahs2912@gmail.com, Hannah,25,2024-04-28,A-3,1B,140
+lbellenprivate@gmail.com, Lauren,25,2024-04-28,A-6,2B,140
+marinspies01@gmail.com, Maggie,25,2024-04-01,A-8,2F,140
+megan.maurer18@gmail.com, Megan, 25,2024-04-25,A-7,3A,140
+rachelmenhart01@gmail.com, Rachel, 25,2024-04-29,B-9, 1C,140
+jakehoury@gmail.com, Jake,25,2024-04-28,B-2,1F,140
+milla.mccleskey@gmail.com, Milla,25,2024-04-28,A-5,3B,140
+dimplemehta20@gmail.com, Dimple,25,2024-04-28,B-7, 3D,140
+kmehta992@gmail.com, Khushbu,25,2024-04-28,B-8, 2D,140
+ivalisguajardo@gmail.com, Ivalis,25,2024-04-28,B-3, 3C,140
+rebeccahkleiman@gmail.com, Rebecca,25,2024-04-28,A-4,3E,140
+jdrutter2@gmail.com, James,25,2024-04-28,B-1, 1E,140
+Marinasrutter@gmail.com, Marina,25,2024-04-28,B-4, 1D,140
+houang@asu.edu,Michael,25,2024-04-30,B-5,2C,140
+habieber1108@gmail.com,Holly,25,2024-05-01,B-6,3F,140
+Lcguerra714@gmail.com,Laura,25,2024-05-01,A-1,1A,100
+rallykate@gmail.com,Katie,25,2024-04-01,A-9,2E,140
