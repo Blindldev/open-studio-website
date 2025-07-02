@@ -1,21 +1,27 @@
-email,name,clay_allocation,membership_date,locker_number,shelf_number,next_billing_amount
-PotteryChicago@gmail.com,Admin,25,2025-04-01,All,All,140
-Mikevicentecs@gmail.com,Mike,25,2024-04-01,A-1,All,140
-kali.lachner@gmail.com, Kali,25,2024-04-01,A-2,2A,140
-hannahs2912@gmail.com, Hannah,25,2024-04-28,A-3,1B,140
-lbellenprivate@gmail.com, Lauren,25,2024-04-28,A-6,2B,140
-marinspies01@gmail.com, Maggie,25,2024-04-01,A-8,2F,140
-megan.maurer18@gmail.com, Megan, 25,2024-04-25,A-7,3A,140
-rachelmenhart01@gmail.com, Rachel, 25,2024-04-29,B-9, 1C,140
-jakehoury@gmail.com, Jake,25,2024-04-28,B-2,1F,140
-milla.mccleskey@gmail.com, Milla,25,2024-04-28,A-5,3B,140
-dimplemehta20@gmail.com, Dimple,25,2024-04-28,B-7, 3D,140
-kmehta992@gmail.com, Khushbu,25,2024-04-28,B-8, 2D,140
-ivalisguajardo@gmail.com, Ivalis,25,2024-04-28,B-3, 3C,140
-rebeccahkleiman@gmail.com, Rebecca,25,2024-04-28,A-4,3E,140
-jdrutter2@gmail.com, James,25,2024-04-28,B-1, 1E,140
-Marinasrutter@gmail.com, Marina,25,2024-04-28,B-4, 1D,140
-houang@asu.edu,Michael,25,2024-04-30,B-5,2C,140
-habieber1108@gmail.com,Holly,25,2024-05-01,B-6,3F,140
-Lcguerra714@gmail.com,Laura,25,2024-05-01,A-1,1A,100
-rallykate@gmail.com,Katie,25,2024-04-01,A-9,2E,140
+email,name,clay_allocation,membership_date,locker_number,shelf_number,next_billing_amount,membership_status
+PotteryChicago@gmail.com,Admin,25,2025-04-01,All,All,140,active
+Mikevicentecs@gmail.com,Mike,25,2024-04-01,A-1,All,190,active
+kali.lachner@gmail.com, Kali,25,2024-04-01,A-2,2A,190,active
+hannahs2912@gmail.com, Hannah,25,2024-04-28,A-3,1B,190,active
+lbellenprivate@gmail.com, Lauren,25,2024-04-28,A-6,2B,190,active
+marinspies01@gmail.com, Maggie,25,2024-04-01,A-8,2F,190,active
+megan.maurer18@gmail.com, Megan, 25,2024-04-25,A-7,3A,190,active
+rachelmenhart01@gmail.com, Rachel, 25,2024-04-29,B-9, 1C,190,active
+jakehoury@gmail.com, Jake,25,2024-04-28,B-2,1F,190,active
+milla.mccleskey@gmail.com, Milla,25,2024-04-28,A-5,3B,190,active
+dimplemehta20@gmail.com, Dimple,25,2024-04-28,B-7, 3D,190,active
+kmehta992@gmail.com, Khushbu,25,2024-04-28,B-8, 2D,190,active
+ivalisguajardo@gmail.com, Ivalis,25,2024-04-28,B-3, 3C,190,active
+rebeccahkleiman@gmail.com, Rebecca,25,2024-04-28,A-4,3E,190,active
+jdrutter2@gmail.com, James,25,2024-04-28,B-1, 1E,190,active
+Marinasrutter@gmail.com, Marina,25,2024-04-28,B-4, 1D,190,active
+houang@asu.edu,Michael,25,2024-04-30,B-5,2C,190,active
+habieber1108@gmail.com,Holly,25,2024-05-01,B-6,3F,140,active
+Lcguerra714@gmail.com,Laura,25,2024-05-01,A-1,1A,100,active
+rallykate@gmail.com,Katie,25,2024-04-01,A-9,2E,190,paused
+rebecca.plata@yahoo.com,Rebecca,25,2025-06-29,TBD,TBD,190,active
+lldevitt@gmail.com,Laura,25,2025-06-29,TBD,TBD,100,active
+mandysallmann@gmail.com,Amanda,25,2025-06-29,TBD,TBD,190,active
+hanlin.mok.36@gmail.com,Hanlin,25,2025-06-29,TBD,TBD,190,active
+marlajacob24@gmail.com,Marla,25,2025-06-29,TBD,TBD,190,active
+cedricignacio58@gmail.com,Cedric,25,2025-06-29,TBD,TBD,190,active

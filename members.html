@@ -167,24 +167,42 @@
             const member = await isActiveMember(email);
             
             if (member) {
-                // Show member dashboard
-                document.getElementById('login-container').style.display = 'none';
-                document.getElementById('member-dashboard').style.display = 'block';
-                document.getElementById('member-name').textContent = member.name;
-                document.getElementById('clay-allocation').textContent = member.clay_allocation;
-                document.getElementById('membership-date').textContent = member.membership_date;
-                document.getElementById('locker-number').textContent = member.locker_number;
-                document.getElementById('shelf-number').textContent = member.shelf_number;
-                
-                // Calculate next allocation date (first of next month)
-                const today = new Date();
-                const nextAllocation = new Date(today.getFullYear(), today.getMonth() + 1, 1);
-                document.getElementById('next-allocation').textContent = nextAllocation.toLocaleDateString();
-                
-                // Set last cleaned date (7 days ago)
-                const lastCleaned = new Date();
-                lastCleaned.setDate(lastCleaned.getDate() - 7);
-                document.getElementById('last-cleaned').textContent = lastCleaned.toLocaleDateString();
+                // Check membership status
+                if (member.membership_status === 'paused') {
+                    // Show paused membership message
+                    document.getElementById('member-dashboard').innerHTML = `
+                        <div class="dashboard-content">
+                            <div class="dashboard-section">
+                                <h3>Membership Status</h3>
+                                <p style="color: #d32f2f; font-weight: bold; font-size: 1.2em;">Your membership has been paused</p>
+                                <p>Please message us to resume your membership.</p>
+                                <p>Email: <a href="mailto:PotteryChicago@gmail.com">PotteryChicago@gmail.com</a></p>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    // Show active membership dashboard
+                    document.getElementById('member-dashboard').style.display = 'block';
+                    document.getElementById('login-container').style.display = 'none';
+                    
+                    // Populate member information
+                    document.getElementById('member-name').textContent = member.name;
+                    document.getElementById('clay-allocation').textContent = member.clay_allocation;
+                    document.getElementById('membership-date').textContent = member.membership_date;
+                    document.getElementById('locker-number').textContent = member.locker_number;
+                    document.getElementById('shelf-number').textContent = member.shelf_number;
+                    document.getElementById('next-billing-amount').textContent = '$' + member.next_billing_amount;
+                    
+                    // Calculate next allocation date (first of next month)
+                    const today = new Date();
+                    const nextAllocation = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+                    document.getElementById('next-allocation').textContent = nextAllocation.toLocaleDateString();
+                    
+                    // Set last cleaned date (7 days ago)
+                    const lastCleaned = new Date();
+                    lastCleaned.setDate(lastCleaned.getDate() - 7);
+                    document.getElementById('last-cleaned').textContent = lastCleaned.toLocaleDateString();
+                }
             } else {
                 // Show error message
                 document.getElementById('error-message').textContent = 
