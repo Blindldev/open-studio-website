@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Open Studio - Upcoming Events</title>
+    <link rel="stylesheet" href="css/styles.css?v=3.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <!-- Navigation will be loaded here -->
+    </header>
+
+    <main>
+        <section class="events-hero">
+            <h1>Upcoming Events</h1>
+            <p>Join us for exciting pottery events and workshops</p>
+        </section>
+
+        <section class="events-content">
+            <div class="events-container" id="events-container">
+                <!-- Events will be dynamically loaded here -->
+            </div>
+
+            <div class="no-events" id="no-events" style="display: none;">
+                <div class="no-events-content">
+                    <h2>No Upcoming Events</h2>
+                    <p>Want to find out about event opportunities?</p>
+                    <a href="mailto:PotteryChicago@gmail.com" class="cta-button">Message Mike</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer will be loaded here -->
+    </footer>
+
+    <script type="module" src="js/nav.js"></script>
+    <script>
+        // Event data - add new events here
+        const events = [
+            {
+                id: 'matcha-bowls',
+                title: 'Matcha Bowls in the Park',
+                date: '2025-09-27',
+                time: '2:00 PM - 5:00 PM',
+                location: 'Lincoln Park',
+                description: 'Join us for a special outdoor pottery event where we\'ll be creating beautiful matcha bowls in the park. All skill levels welcome!',
+                status: 'upcoming'
+            }
+        ];
+
+        // Function to check if an event has passed
+        function isEventPassed(eventDate) {
+            const today = new Date();
+            const event = new Date(eventDate);
+            today.setHours(0, 0, 0, 0);
+            event.setHours(0, 0, 0, 0);
+            return event < today;
+        }
+
+        // Function to format date for display
+        function formatEventDate(dateString) {
+            const date = new Date(dateString);
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            return date.toLocaleDateString('en-US', options);
+        }
+
+        // Function to render events
+        function renderEvents() {
+            const eventsContainer = document.getElementById('events-container');
+            const noEventsDiv = document.getElementById('no-events');
+            
+            // Filter out past events
+            const upcomingEvents = events.filter(event => !isEventPassed(event.date));
+            
+            if (upcomingEvents.length === 0) {
+                eventsContainer.style.display = 'none';
+                noEventsDiv.style.display = 'block';
+                return;
+            }
+            
+            eventsContainer.style.display = 'block';
+            noEventsDiv.style.display = 'none';
+            
+            eventsContainer.innerHTML = upcomingEvents.map(event => `
+                <div class="event-card">
+                    <h3>${event.title}</h3>
+                    <div class="event-details">
+                        <p class="event-date"><i class="fas fa-calendar"></i> ${formatEventDate(event.date)}</p>
+                        <p class="event-time"><i class="fas fa-clock"></i> ${event.time}</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> ${event.location}</p>
+                    </div>
+                    <p class="event-description">${event.description}</p>
+                    <div class="event-status ${event.status}">${event.status.charAt(0).toUpperCase() + event.status.slice(1)}</div>
+                </div>
+            `).join('');
+        }
+
+        // Initialize events on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            renderEvents();
+        });
+
+        // Check for expired events every hour
+        setInterval(renderEvents, 3600000);
+    </script>
+</body>
+</html>

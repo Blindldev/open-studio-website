@@ -1,11 +1,11 @@
 email,name,clay_allocation,membership_date,locker_number,shelf_number,next_billing_amount,membership_status
 PotteryChicago@gmail.com,Admin,25,2025-04-01,All,All,140,active
-Mikevicentecs@gmail.com,Mike,25,2024-04-01,A-1,All,190,active
+Mikevicentecs@gmail.com,Mike,25,2024-04-01,All,All,190,active
 kali.lachner@gmail.com, Kali,25,2024-04-01,A-2,2A,190,active
 hannahs2912@gmail.com, Hannah,25,2024-04-28,A-3,1B,190,active
 lbellenprivate@gmail.com, Lauren,25,2024-04-28,A-6,2B,190,paused
 marinspies01@gmail.com, Maggie,25,2024-04-01,A-8,2F,190,active
-megan.maurer18@gmail.com, Megan, 25,2024-04-25,A-7,3A,190,active
+megan.maurer18@gmail.com, Megan, 25,2024-04-25,A-7,3A,190,paused
 rachelmenhart01@gmail.com, Rachel, 25,2024-04-29,B-9, 1C,190,active
 jakehoury@gmail.com, Jake,25,2024-04-28,B-2,1F,190,paused
 milla.mccleskey@gmail.com, Milla,25,2024-04-28,A-5,3B,190,active
@@ -19,14 +19,15 @@ houang@asu.edu,Michael,25,2024-04-30,B-5,2C,190,active
 habieber1108@gmail.com,Holly,25,2024-05-01,B-6,3F,140,active
 Lcguerra714@gmail.com,Laura,25,2024-05-01,A-1,1A,100,active
 rallykate@gmail.com,Katie,25,2024-04-01,A-9,2E,190,paused
-Rebecca.j.plata96@gmail.com,Rebecca,25,2025-06-29,TBD,TBD,190,active
-lldevitt@gmail.com,Laura,25,2025-06-29,TBD,TBD,100,active
-mandysallmann@gmail.com,Amanda,25,2025-06-29,TBD,TBD,190,active
-hanlin.mok.36@gmail.com,Hanlin,25,2025-06-29,TBD,TBD,190,active
-marlajacob24@gmail.com,Marla,25,2025-06-29,TBD,TBD,190,active
-cedricignacio58@gmail.com,Cedric,25,2025-06-29,TBD,TBD,190,active
+Rebecca.j.plata96@gmail.com,Rebecca,25,2025-06-29,TBD,4F,190,active
+lldevitt@gmail.com,Laura,25,2025-06-29,C-4,2B,100,active
+mandysallmann@gmail.com,Amanda,25,2025-06-29,C-3,4A,190,active
+hanlin.mok.36@gmail.com,Hanlin,25,2025-06-29,C-5,4E,190,active
+marlajacob24@gmail.com,Marla,25,2025-06-29,TBD,TBD,190,paused
+cedricignacio58@gmail.com,Cedric,25,2025-06-29,C-1,4C,190,active
 mmcalisteryoung@gmail.com,Maria Young,25,2024-12-01,TBD,TBD,190,paused
 tasha.abraham8@gmail.com,Tasha,25,2025-08-01,A-4,2E,190,active
 nguyentommyle@gmail.com,Tommy Nguyen,25,2025-08-01,A-2,1C,190,active
 vickybobrowski@gmail.com,Vicky,25,2025-08-02,B-9,3F,190,active
-emmadruth@outlook.com,Dannee,25,2025-08-02,TBD,TBD,190,active
+emmadruth@outlook.com,Dannee,25,2025-08-02,A-7,3A,190,active
+caroline@example.com,Caroline,25,2025-08-29,TBD,4B,190,active

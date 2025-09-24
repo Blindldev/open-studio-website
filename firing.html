@@ -38,19 +38,19 @@
                 <div class="firing-dates">
                     <div class="firing-date">
                         <h3>Previous Firing</h3>
-                        <p class="date">Friday August 1st, 2025</p>
+                        <p class="date" id="previous-firing-date">Tuesday September 23rd, 2025</p>
                         <p class="status completed">Completed</p>
                         <p class="temperature">Low Fire</p>
                     </div>
                     <div class="firing-date">
                         <h3>Next Firing</h3>
-                        <p class="date">Monday August 4th, 2025</p>
+                        <p class="date" id="next-firing-date">Tuesday October 1st, 2025</p>
                         <p class="status upcoming">Upcoming</p>
                         <p class="temperature">Low Fire</p>
                     </div>
                     <div class="firing-date future">
                         <h3>Following Firing</h3>
-                        <p class="date">Monday August 11th, 2025</p>
+                        <p class="date" id="following-firing-date">Tuesday October 8th, 2025</p>
                         <p class="status scheduled">Scheduled</p>
                         <p class="temperature">Low Fire</p>
                     </div>
@@ -104,10 +104,58 @@
 
     <script type="module" src="js/nav.js"></script>
     <script>
+        // Function to get the next Tuesday at 9 PM
+        function getNextTuesday() {
+            const now = new Date();
+            const daysUntilTuesday = (2 - now.getDay() + 7) % 7; // Tuesday is day 2
+            const nextTuesday = new Date(now);
+            nextTuesday.setDate(now.getDate() + (daysUntilTuesday === 0 ? 7 : daysUntilTuesday));
+            nextTuesday.setHours(21, 0, 0, 0); // 9 PM
+            
+            // If it's already past 9 PM on Tuesday, get next Tuesday
+            if (now.getDay() === 2 && now.getHours() >= 21) {
+                nextTuesday.setDate(nextTuesday.getDate() + 7);
+            }
+            
+            return nextTuesday;
+        }
+
+        // Function to get the previous Tuesday
+        function getPreviousTuesday() {
+            const now = new Date();
+            const daysSinceTuesday = (now.getDay() - 2 + 7) % 7;
+            const previousTuesday = new Date(now);
+            previousTuesday.setDate(now.getDate() - (daysSinceTuesday === 0 ? 7 : daysSinceTuesday));
+            previousTuesday.setHours(21, 0, 0, 0);
+            return previousTuesday;
+        }
+
+        // Function to format date for display
+        function formatDate(date) {
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            return date.toLocaleDateString('en-US', options);
+        }
+
+        // Update firing dates
+        function updateFiringDates() {
+            const previousTuesday = getPreviousTuesday();
+            const nextTuesday = getNextTuesday();
+            const followingTuesday = new Date(nextTuesday);
+            followingTuesday.setDate(nextTuesday.getDate() + 7);
+
+            document.getElementById('previous-firing-date').textContent = formatDate(previousTuesday);
+            document.getElementById('next-firing-date').textContent = formatDate(nextTuesday);
+            document.getElementById('following-firing-date').textContent = formatDate(followingTuesday);
+        }
+
         // Get the date from the "Next Firing" event
         function getNextFiringDate() {
-            // Hardcode the next firing date to August 4th, 2025 at 9 PM
-            return new Date('2025-08-04T21:00:00');
+            return getNextTuesday();
         }
 
         // Update the countdown
@@ -120,6 +168,8 @@
                 document.getElementById('days').textContent = '00';
                 document.getElementById('hours').textContent = '00';
                 document.getElementById('minutes').textContent = '00';
+                // Update dates when firing has passed
+                updateFiringDates();
                 return;
             }
 
@@ -132,7 +182,8 @@
             document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
         }
 
-        // Update countdown every minute
+        // Initialize and update countdown every minute
+        updateFiringDates();
         updateCountdown();
         setInterval(updateCountdown, 60000);
     </script>
