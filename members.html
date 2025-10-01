@@ -137,7 +137,7 @@
         // Function to check if an email is in the active members list
         async function isActiveMember(email) {
             try {
-                const response = await fetch('data/active_members.csv');
+                const response = await fetch('data/active_members.csv?v=' + Date.now());
                 const csvText = await response.text();
                 const lines = csvText.split('\n');
                 const headers = lines[0].split(',');
