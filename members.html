@@ -28,7 +28,7 @@
                     data-callback="handleCredentialResponse"
                     data-auto_prompt="false">
                 </div>
-                <div class="g_id_signin" data-type="standard"></div>
+                <div class="g_id_signin" data-type="standard" data-theme="outline" data-size="large"></div>
                 <div id="error-message" class="error-message"></div>
             </div>
 
@@ -118,19 +118,11 @@
     <script type="module" src="js/nav.js"></script>
     <script>
         function initGoogleSignIn() {
-            gapi.load('auth2', function() {
-                gapi.auth2.init({
-                    client_id: 'YOUR_GOOGLE_CLIENT_ID',
-                    scope: 'email profile',
-                    redirect_uri: 'https://throw247.com/members.html'
-                }).then(function(auth2) {
-                    // Check if user is already signed in
-                    if (auth2.isSignedIn.get()) {
-                        const profile = auth2.currentUser.get().getBasicProfile();
-                        const email = profile.getEmail();
-                        checkMemberStatus(email);
-                    }
-                });
+            // Initialize Google Identity Services
+            google.accounts.id.initialize({
+                client_id: '211755762666-rh0kraf1ola65g5r5dud53o9qap9acpg.apps.googleusercontent.com',
+                callback: handleCredentialResponse,
+                auto_select: false
             });
         }
 
@@ -215,10 +207,15 @@
         // Handle sign out
         document.getElementById('sign-out').addEventListener('click', () => {
             google.accounts.id.disableAutoSelect();
-            document.getElementById('login-container').style.display = 'block';
             document.getElementById('member-dashboard').style.display = 'none';
+            document.getElementById('login-container').style.display = 'block';
             document.getElementById('error-message').textContent = '';
         });
+
+        // Initialize Google Sign-In when the page loads
+        window.onload = function() {
+            initGoogleSignIn();
+        };
     </script>
 </body>
 </html> 
