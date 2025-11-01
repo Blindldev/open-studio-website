@@ -1367,6 +1367,128 @@ footer {
     color: var(--text-color);
 }
 
+/* Update Banner Styles */
+.update-banner {
+    background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+    padding: 2.5rem 5%;
+    margin: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.update-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255, 255, 255, 0.05) 10px,
+        rgba(255, 255, 255, 0.05) 20px
+    );
+    pointer-events: none;
+}
+
+.update-banner-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.update-icon {
+    font-size: 4rem;
+    flex-shrink: 0;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.update-text {
+    flex: 1;
+    color: white;
+}
+
+.update-text h2 {
+    color: white;
+    margin: 0 0 0.75rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.update-text p {
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.update-button {
+    background-color: white;
+    color: #ff9800;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.update-button:hover {
+    background-color: #fff9e6;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .update-banner {
+        padding: 2rem 5%;
+    }
+    
+    .update-banner-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .update-icon {
+        font-size: 3rem;
+    }
+    
+    .update-text h2 {
+        font-size: 1.5rem;
+    }
+    
+    .update-text p {
+        font-size: 1rem;
+    }
+    
+    .update-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 /* Candle Making Page Styles */
 .candle-intro {
     margin: 1.5rem 0;
