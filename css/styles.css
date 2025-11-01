@@ -1365,4 +1365,166 @@ footer {
 .events-preview p {
     margin-bottom: 1.5rem;
     color: var(--text-color);
+}
+
+/* Candle Making Page Styles */
+.candle-intro {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background-color: var(--light-bg);
+    border-radius: 8px;
+}
+
+.candle-supplies {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.candle-supplies li {
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background-color: var(--white);
+    border-radius: 6px;
+    border-left: 4px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.candle-supplies li i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    min-width: 30px;
+}
+
+.rules-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.rules-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.rules-section h3 i {
+    font-size: 1.2rem;
+}
+
+.rules-section ul {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.rules-section li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.guide-section {
+    margin: 2rem 0;
+}
+
+.guide-steps {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.guide-step {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.guide-step:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.step-number {
+    min-width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.step-content p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.tips-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #fff9e6 0%, #ffe6cc 100%);
+    border-radius: 8px;
+    border-left: 5px solid #ff9800;
+}
+
+.tips-section h3 {
+    color: #ff9800;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tips-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tips-list li {
+    padding: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.tips-list li:before {
+    content: "✨";
+    position: absolute;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    .guide-step {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .step-number {
+        margin: 0 auto;
+    }
+    
+    .step-content {
+        text-align: left;
+    }
 } 
