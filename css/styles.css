@@ -1375,6 +1375,30 @@ footer {
     border-radius: 8px;
 }
 
+.candle-intro .important-note {
+    padding: 1rem;
+    margin: 1.5rem 0;
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    border-left: 4px solid #ff9800;
+    border-radius: 6px;
+    color: #e65100;
+}
+
+.important-section {
+    border: 2px solid #ff9800;
+    background: linear-gradient(135deg, #fff9e6 0%, #ffe6cc 100%) !important;
+}
+
+.important-section ol {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.important-section li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
 .candle-supplies {
     list-style: none;
     padding: 0;
@@ -1430,6 +1454,126 @@ footer {
 
 .guide-section {
     margin: 2rem 0;
+}
+
+.guide-intro {
+    margin: 1rem 0 2rem;
+    padding: 1rem;
+    background-color: var(--light-bg);
+    border-radius: 6px;
+    font-style: italic;
+}
+
+.process-overview {
+    margin: 2rem 0 3rem;
+    padding: 2rem;
+    background-color: var(--light-bg);
+    border-radius: 8px;
+}
+
+.process-overview h3 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.process-flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.process-step {
+    flex: 1;
+    min-width: 150px;
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.process-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.process-step.highlight {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: 3px solid #ff9800;
+}
+
+.process-step.highlight h4,
+.process-step.highlight p {
+    color: white;
+}
+
+.process-number {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+}
+
+.process-step.highlight .process-number {
+    background: white;
+    color: var(--primary-color);
+}
+
+.process-content h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.process-step.highlight .process-content h4 {
+    color: white;
+}
+
+.process-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.process-step.highlight .process-content p {
+    color: white;
+}
+
+.process-arrow {
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .process-flow {
+        flex-direction: column;
+    }
+    
+    .process-arrow {
+        transform: rotate(90deg);
+        margin: 0.5rem 0;
+    }
+    
+    .process-step {
+        width: 100%;
+        min-width: auto;
+    }
 }
 
 .guide-steps {
