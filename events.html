@@ -28,9 +28,9 @@
 
             <div class="no-events" id="no-events" style="display: none;">
                 <div class="no-events-content">
-                    <h2>No Upcoming Events</h2>
-                    <p>Want to find out about event opportunities?</p>
-                    <a href="mailto:PotteryChicago@gmail.com" class="cta-button">Message Mike</a>
+                    <h2>No Upcoming Events Listed</h2>
+                    <p>We are always adding new opportunities. Contact us for the latest on events and workshops.</p>
+                    <a href="mailto:PotteryChicago@gmail.com" class="cta-button">Contact Us</a>
                 </div>
             </div>
         </section>
@@ -43,17 +43,7 @@
     <script type="module" src="js/nav.js"></script>
     <script>
         // Event data - add new events here
-        const events = [
-            {
-                id: 'matcha-bowls',
-                title: 'Matcha Bowls in the Park',
-                date: '2025-09-27',
-                time: '2:00 PM - 5:00 PM',
-                location: 'Lincoln Park',
-                description: 'Join us for a special outdoor pottery event where we\'ll be creating beautiful matcha bowls in the park. All skill levels welcome!',
-                status: 'upcoming'
-            }
-        ];
+        const events = [];
 
         // Function to check if an event has passed
         function isEventPassed(eventDate) {

@@ -58,7 +58,7 @@
                         <p>Studio Pin Code: 12694</p>
                         <p>Current Status: <span class="status active">Active</span></p>
                         <p>Membership Date: <span id="membership-date">2025-04-01</span></p>
-                        <p>Next Billing Amount: <span id="next-billing-amount">$140</span></p>
+                        <p>For billing and plan questions, email <a href="mailto:PotteryChicago@gmail.com">PotteryChicago@gmail.com</a>.</p>
                     </div>
                     
                     <div class="dashboard-section">
@@ -76,10 +76,7 @@
 
                     <div class="clay-info">
                         <h3>Clay Information</h3>
-                        <p><strong>Monthly Allowance:</strong> 25 lbs of low-fire clay</p>
-                        <p><strong>Your Status:</strong> Opted in for monthly clay ($50/month)</p>
-                        <p><strong>Additional Clay:</strong> $2 per pound (25-lb increments) - message us to order</p>
-                        <p><strong>Opt-out Option:</strong> $140/month base rate - message us to switch</p>
+                        <p><strong>Monthly allowance:</strong> Low-fire studio clay (see your allocation above). For options, add-ons, or changes to your plan, message us—we will share current details.</p>
                         <p><strong>Storage:</strong> Use your assigned locker - wrap clay properly</p>
                         <p><strong>Outside clay (and glazes) are not allowed</strong> <span style="font-size: 0.8em; color: #666;">please i don't want to have a kiln disaster</span></p>
                     </div>
@@ -102,8 +99,7 @@
                     <div class="access-info">
                         <h3>Access Information</h3>
                         <p>Studio Hours: 24/7 (except Mondays 9pm to Tuesdays 9am)</p>
-                        <p><strong>New 24/7 Open Studio:</strong> 4723 N Winchester Ave, Chicago, IL 60640</p>
-                        <p><strong>Main Studio (Classes & Workshops):</strong> 1770 W Berteau Ave, Chicago, IL 60613</p>
+                        <p>For current studio locations and access details, email <a href="mailto:PotteryChicago@gmail.com">PotteryChicago@gmail.com</a>.</p>
                     </div>
                 </div>
                 <button id="sign-out" class="sign-out-button">Sign Out</button>
@@ -209,8 +205,6 @@
                     document.getElementById('membership-date').textContent = member.membership_date;
                     document.getElementById('locker-number').textContent = member.locker_number;
                     document.getElementById('shelf-number').textContent = member.shelf_number;
-                    document.getElementById('next-billing-amount').textContent = '$' + member.next_billing_amount;
-                    
                     // Calculate next allocation date (first of next month)
                     const today = new Date();
                     const nextAllocation = new Date(today.getFullYear(), today.getMonth() + 1, 1);
